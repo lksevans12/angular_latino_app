@@ -1,0 +1,39 @@
+body {
+font-family: 'Enriqueta', serif;
+}
+
+h1{
+  text-align: center;
+  font-style: bolder;
+  font-size: 3em;
+}
+
+.boss {
+  color: #E82C0C;
+  text-decoration: none;
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.info {
+  color: #FF770D;
+  padding-left: 90px;
+  padding-right: 180px;
+}
+
+.number {
+  color: #00B265;
+  padding-left: 90px;
+  padding-right: 180px;
+}
+
+img {
+  position: relative;
+  display: inline;
+  right: 0px;
+}
+
+#map{
+  height: 400;
+  width: 400;
+}

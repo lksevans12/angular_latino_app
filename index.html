@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>My Sample Angular App</title>
+  <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+  <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.js"></script>
+  <script type="text/javascript" src = "app.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+  <link href='https://fonts.googleapis.com/css?family=Enriqueta' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <h1> Latino Cultural Centers in NYC! </h1>
+  <h3> What are you looking to explore? </h3>
+
+
+  <div ng-app = "laura" ng-controller = "MainController">
+
+
+  <p>Search:</p> <p><input type="text" ng-model="search"></p>
+  <div id = "map"></div>
+    <ul>
+      <li class="boss" ng-repeat = "item in nycData | filter:search |orderBy: 'borough'">
+        {{item.organization_location + ', ' + item.borough}}
+
+
+      <button ng-click = "toggleItem(item)" >{{item.toggleText || "show more"}}</button>
+        <p ng-show="item.showMore"></p>
+        <p class="info"ng-show="item.showMore"> {{item.company_description}}</p>
+        <p class="number"ng-show="item.showMore">Contact: {{item.contact_phone}}</p>
+      </li>
+
+    </ul>
+  </div>
+
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1nNA3OfAoCOrzaSl3ERNAgr0ztaj_28I&callback=initMap">
+    </script>
+</body>
+</html>
+
+
+<!-- AIzaSyB1nNA3OfAoCOrzaSl3ERNAgr0ztaj_28I -->
+
+<!-- {"zipcode":"10009","contact_phone":"(212) 254-3697","borough":"Manhattan","business_organization":"Cultural Center","organization_location":"ABC No Rio","company_description":"ABC No Rio is a collectively-run center for art and activism. We are known internationally as a venue for oppositional culture. ABC No Rio was founded in 1980 by artists committed to political and social engagement and we retain these values to the present. We seek to facilitate cross-pollination between artists and activists. ABC No Rio is a place where people share resources and ideas to impact society, culture, and community. We believe that art and activism should be for everyone, not just the professionals, experts, and cognoscenti. Our dream is a cadre of actively aware artists and artfully aware activists.","company_name":"ABC No Rio","location_1":{"needs_recoding":false,"longitude":"-73.97911148500697","latitude":"40.72664935898081","human_address":"{\"address\":\"156 Rivington Street\",\"city\":\"Manhattan\",\"state\":\"NY\",\"zip\":\"10009\"}"},"street_address":"156 Rivington Street"} -->
